@@ -4,6 +4,7 @@ module key_expansion (
 input  logic [DATA_WIDTH-1:0] key,
 output logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key
 );
+
 genvar expan_num;
 logic [WORD_SIZE-1:0] g_w [0:NUM_OF_ROUNDS-1];
 // divide in words the input key
@@ -23,3 +24,4 @@ generate
 endgenerate
 
 endmodule
+/* ------------------- End Of File -------------------*/
