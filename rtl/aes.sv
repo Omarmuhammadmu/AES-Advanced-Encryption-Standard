@@ -1,3 +1,34 @@
+/* -----------------------------------------------------------------------------
+   Copyright (c) Omar Muhammad Mustafa
+   -----------------------------------------------------------------------------
+   FILE NAME : aes.sv
+   DEPARTMENT : aes wrapper
+   AUTHOR : Omar Muhammad
+   AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+   1.0      2024-10-5               initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES
+   -----------------------------------------------------------------------------
+   PURPOSE : Wrapper of aes
+   -----------------------------------------------------------------------------
+   PARAMETERS
+   PARAM NAME   : RANGE   : DESCRIPTION         : DEFAULT   : UNITS
+   N/A          : N/A     : N/A                 : N/A       : N/A 
+   -----------------------------------------------------------------------------
+   REUSE ISSUES
+   Reset Strategy   : 
+   Clock Domains    : 
+   Critical Timing  : 
+   Test Features    : 
+   Asynchronous I/F : 
+   Scan Methodology : 
+   Instantiations   : 
+   Synthesizable    : Y
+   Other            : 
+   -FHDR------------------------------------------------------------------------*/
 import aes_package::*;
 
 module aes(
@@ -11,20 +42,26 @@ module aes(
 );
 
 logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key;
-// Cipher
-aes_cipher u_aes_cipher (
-    .clk (clk),  
-    .rst (rst),
-    .start (start_encryption),
-    .plaintext (plaintext_encryption),
+/*----------------------------------------------------------
+                    Instantiations
+------------------------------------------------------------*/
+//Chiper
+aes_cipher u_aes_cipher
+(
+    .clk        (clk),  
+    .rst        (rst),
+    .start      (start_encryption),
+    .plaintext  (plaintext_encryption),
     .round_keys (expansioned_key),
     .cyphertext (cyphertext_encryption),
-    .done (done_encryption)
+    .done       (done_encryption)
 );
+
 // Key expansion
-key_expansion u_key_expansion (
-    .key(key_encryption),
-    .expansioned_key(expansioned_key)
+key_expansion u_key_expansion
+(
+    .key                (key_encryption),
+    .expansioned_key    (expansioned_key)
 );
 
 // Dicipher

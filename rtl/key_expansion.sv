@@ -1,14 +1,52 @@
+/* -----------------------------------------------------------------------------
+   Copyright (c) Omar Muhammad Mustafa
+   -----------------------------------------------------------------------------
+   FILE NAME : key_expansion.sv
+   DEPARTMENT : aes key expansion
+   AUTHOR : Omar Muhammad
+   AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+   1.0      2024-10-5               initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES, Key_Expansion
+   -----------------------------------------------------------------------------
+   PURPOSE : Implementaion of Key expansion module
+   -----------------------------------------------------------------------------
+   PARAMETERS
+   PARAM NAME   : RANGE   : DESCRIPTION         : DEFAULT   : UNITS
+   N/A          : N/A     : N/A                 : N/A       : N/A 
+   -----------------------------------------------------------------------------
+   REUSE ISSUES
+   Reset Strategy   : 
+   Clock Domains    : 
+   Critical Timing  : 
+   Test Features    : 
+   Asynchronous I/F : 
+   Scan Methodology : 
+   Instantiations   : 
+   Synthesizable    : Y
+   Other            : 
+   -FHDR------------------------------------------------------------------------*/
 import aes_package::*;
 
 module key_expansion (
-input  logic [DATA_WIDTH-1:0] key,
-output logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key
+    input  logic [DATA_WIDTH-1:0]           key,
+    output logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key
 );
-
+/*----------------------------------------------------------
+        Internal signals and variables declarations
+------------------------------------------------------------*/
 genvar expan_num;
 logic [WORD_SIZE-1:0] g_w [0:NUM_OF_ROUNDS-1];
-// divide in words the input key
+
+/*----------------------------------------------------------
+                Key espansion implementation
+------------------------------------------------------------*/
+// Original key assigning
 assign expansioned_key [EXPANSIONED_KEY_SIZE-1 -: DATA_WIDTH] = key;
+
 // g_operator and expansion stages
 generate
     for(expan_num = 0; expan_num < NUM_OF_ROUNDS; expan_num++) begin : expansion_loop

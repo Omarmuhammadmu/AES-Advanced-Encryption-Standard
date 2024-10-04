@@ -1,3 +1,35 @@
+/* -----------------------------------------------------------------------------
+   Copyright (c) Omar Muhammad Mustafa
+   -----------------------------------------------------------------------------
+   FILE NAME : aes_chipher.sv
+   DEPARTMENT : aes enrypthion
+   AUTHOR : Omar Muhammad
+   AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+   1.0      2024-10-5               initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES
+   -----------------------------------------------------------------------------
+   PURPOSE : Wrapper of aes cipher
+   -----------------------------------------------------------------------------
+   PARAMETERS
+   PARAM NAME   : RANGE   : DESCRIPTION         : DEFAULT   : UNITS
+   N/A          : N/A     : N/A                 : N/A       : N/A 
+   -----------------------------------------------------------------------------
+   REUSE ISSUES
+   Reset Strategy   : 
+   Clock Domains    : 
+   Critical Timing  : 
+   Test Features    : 
+   Asynchronous I/F : 
+   Scan Methodology : 
+   Instantiations   : 
+   Synthesizable    : Y
+   Other            : 
+   -FHDR------------------------------------------------------------------------*/
+   
 import aes_package::*;
 
 module aes_cipher (
@@ -9,17 +41,45 @@ module aes_cipher (
     output logic [DATA_WIDTH-1:0]           cyphertext,
     output logic                            done
 );
+/*----------------------------------------------------------
+        Internal signals and variables declarations
+------------------------------------------------------------*/
+logic [DATA_WIDTH-1:0]  pre_first_round;
+logic [DATA_WIDTH-1:0]  round_key              [0 : NUM_OF_ROUNDS];
+logic [DATA_WIDTH-1:0]  internal_cypherdata    [0 : NUM_OF_ROUNDS - 2];
+logic [DATA_WIDTH-1:0]  plaintext_q;
+logic [DATA_WIDTH-1:0]  cyphertext_c;
+logic                   delay_reg;
 
-logic [DATA_WIDTH-1:0] pre_first_round;
-logic [DATA_WIDTH-1:0] round_key [0 : NUM_OF_ROUNDS];
-logic [DATA_WIDTH-1:0] internal_cypherdata [0 : NUM_OF_ROUNDS - 2];
-logic [DATA_WIDTH-1:0]           plaintext_q;
-logic [DATA_WIDTH-1:0]           cyphertext_c;
-logic [1:0]                      shift_regs;
-
-// Key division loop
 genvar key_num;
-// Matrix organizing
+genvar round_num;
+
+/*----------------------------------------------------------
+            Registering input and output
+------------------------------------------------------------*/
+// Register input and output
+always_ff @(posedge clk or negedge rst) begin
+    if(!rst) begin
+        done        <= 'b0;
+        delay_reg   <= 'b0;
+        cyphertext  <= 'b0;
+        plaintext_q <= 'b0;
+    end else begin
+        if(start) begin
+            plaintext_q <= plaintext;
+        end
+
+        if (delay_reg) begin
+            cyphertext <= cyphertext_c;
+        end
+        
+        done        <= delay_reg;
+        delay_reg   <= start;
+    end
+end
+/*----------------------------------------------------------
+                    Key division loop
+------------------------------------------------------------*/
 generate
     for(key_num = 0; key_num < (NUM_OF_ROUNDS + 1); key_num++) begin :key_division_loop
         always_comb begin : assign_always
@@ -28,11 +88,13 @@ generate
     end
 endgenerate
 
-// Add inital round key
+/*----------------------------------------------------------
+                    Add inital round key
+------------------------------------------------------------*/
 assign pre_first_round = plaintext_q ^ round_key [0];
-// assign cyphertext = cyphertext_q;
-// Round generator
-genvar round_num;
+/*----------------------------------------------------------
+                    Rounds generator
+------------------------------------------------------------*/
 generate
     for (round_num = 0; round_num < NUM_OF_ROUNDS; round_num++) begin :round_generator_loop
         if (round_num == 0) begin
@@ -57,25 +119,5 @@ generate
     end
 endgenerate
 
-// Register input and output
-assign done = shift_regs [1];
-always_ff @(posedge clk or negedge rst) begin
-    if(!rst) begin
-        plaintext_q <= 'b0;
-        cyphertext <= 'b0;
-        shift_regs <= 'b0;
-    end else begin
-        if(start) begin
-            plaintext_q <= plaintext;
-        end
-
-        if (shift_regs [0]) begin
-            cyphertext <= cyphertext_c;
-        end
-
-        shift_regs [0] <= start;
-        shift_regs [1] <= shift_regs [0];
-    end
-end
 endmodule
 /* ------------------- End Of File -------------------*/

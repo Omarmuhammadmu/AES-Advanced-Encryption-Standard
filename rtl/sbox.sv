@@ -1,31 +1,43 @@
-/*
-Project        : AES
-Standard doc.  : 
-Module name    : SBox block
-Dependancy     :
-Design doc.    : 
-References     : 
-Description    : Sbox is a lookup/substitution table to 
-                 substitute the input byte
-Owner          : Omar Amin
-*/
+/* -----------------------------------------------------------------------------
+   Copyright (c) --
+   -----------------------------------------------------------------------------
+   FILE NAME : sbox.sv
+   DEPARTMENT : sbox module
+   AUTHOR : Omar Amin
+   AUTHOR’S EMAIL : ---
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+  --        --          Omar Amin   initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES
+   -----------------------------------------------------------------------------
+   PURPOSE : Sbox is a lookup/substitution table to substitute the input byte
+   -----------------------------------------------------------------------------
+   PARAMETERS
+   PARAM NAME   : RANGE   : DESCRIPTION         : DEFAULT   : UNITS
+   N/A          : N/A     : N/A                 : N/A       : N/A 
+   -----------------------------------------------------------------------------
+   REUSE ISSUES
+   Reset Strategy   : 
+   Clock Domains    : 
+   Critical Timing  : 
+   Test Features    : 
+   Asynchronous I/F : 
+   Scan Methodology : 
+   Instantiations   : 
+   Synthesizable    : Y
+   Other            : 
+   -FHDR------------------------------------------------------------------------*/
 
-module sbox               
-(
-// input clk,               //system clock
-// input reset,             //asynch active low reset
-// input valid_in,          //valid input signal
-input logic [7:0] addr,        //SBox input byte
-output logic [7:0] dout    //SBox output
+import aes_package::*;
+
+module sbox (
+   input  logic [BYTE-1 :0] addr,   //SBox input byte
+   output logic [BYTE-1 :0] dout    //SBox output
 );
 
-// always @ ( posedge clk or negedge reset) 
 always @ (*) begin
-//   if (!reset) begin
-//     dout <= 8'h00;
-//   end  else begin
-      
-//     if(valid_in) begin
      case (addr)          //substitution table
        8'h00              : dout <= 8'h63;
        8'h01              : dout <= 8'h7c;
@@ -301,7 +313,6 @@ always @ (*) begin
        default            : dout <= 8'h00;
        
     endcase
-//   end
 end
-
-endmodule 
+endmodule
+/* ------------------- End Of File -------------------*/
