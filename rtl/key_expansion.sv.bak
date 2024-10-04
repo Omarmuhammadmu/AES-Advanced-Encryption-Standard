@@ -1,0 +1,25 @@
+import aes_package::*;
+
+module key_expansion (
+input  logic [DATA_WIDTH-1:0] key,
+output logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key
+);
+genvar expan_num;
+// divide in words the input key
+assign expansioned_key [EXPANSIONED_KEY_SIZE-1 -: DATA_WIDTH] = key;
+// g_operator and expansion stages
+generate
+    for(expan_num = 0; expan_num < NUM_OF_ROUNDS; expan_num++) begin : expansion_loop
+        localparam int word_msb_index = EXPANSIONED_KEY_SIZE - DATA_WIDTH * (expan_num + 1);
+        localparam [WORD_SIZE-1:0] g_w;
+        g_operator #(.ROUND_NUM(expan_num)) g_op (.w(expansioned_key[(word_msb_index + DATA_WIDTH)-96 -:WORD_SIZE]), .g_w(g_w));
+        always_comb begin
+            expansioned_key[word_msb_index -:WORD_SIZE] = (expansioned_key[(word_msb_index + DATA_WIDTH) -:WORD_SIZE]) ^ (g_w); //First MSB word
+            expansioned_key[word_msb_index-32 -:WORD_SIZE] = (expansioned_key[(word_msb_index + DATA_WIDTH)-32 -:WORD_SIZE]) ^ (expansioned_key[word_msb_index -:WORD_SIZE]); //Second MSB word
+            expansioned_key[word_msb_index-64 -:WORD_SIZE] = (expansioned_key[(word_msb_index + DATA_WIDTH)-64 -:WORD_SIZE]) ^ (expansioned_key[word_msb_index-32 -:WORD_SIZE]); //Third MSB word
+            expansioned_key[word_msb_index-96 -:WORD_SIZE] = (expansioned_key[(word_msb_index + DATA_WIDTH)-96 -:WORD_SIZE]) ^ (expansioned_key[word_msb_index-64 -:WORD_SIZE]); //Forth MSB word
+        end
+    end
+endgenerate
+
+endmodule
