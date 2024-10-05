@@ -65,6 +65,15 @@ key_expansion u_key_expansion
 );
 
 // Dicipher
+aes_decipher u_aes_decipher(
+    .clk        (clk),  
+    .rst        (rst),  
+    .start_dec  (),
+    .cyphertext (),
+    .round_keys (expansioned_key),
+    .plaintext  (),
+    .done_dec   ()
+);
 
 endmodule
 /* ------------------- End Of File -------------------*/
