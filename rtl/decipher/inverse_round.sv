@@ -48,6 +48,7 @@ byte inverse_key_matrix                 [0:MAT_NUM_ROW][0:MAT_NUM_COLUMN];
 byte inverse_sub_bytes_matrix           [0:MAT_NUM_ROW][0:MAT_NUM_COLUMN];
 byte inverse_mix_columns_matrix         [0:MAT_NUM_ROW][0:MAT_NUM_COLUMN];
 bit [BYTE-1 :0] inverse_shift_matrix    [0:MAT_NUM_ROW][0:MAT_NUM_COLUMN];
+logic [DATA_WIDTH-1:0] plaintext_temp;
 
 //genvar declarations
 //Matrix organizing genvar
@@ -111,9 +112,9 @@ generate
             always_comb begin
                 if (!LAST_ROUND) begin
                     // Need matrix placement modification
-			        inverse_mix_columns_matrix[y][x] = inverse_shift_matrix[y][x] ^ key_matrix[y][x];
+			        inverse_mix_columns_matrix[y][x] = inverse_sub_bytes_matrix[y][x] ^ inverse_key_matrix[y][x];
                 end else begin
-                    plaintext[(byte_msb_o) -:BYTE] = inverse_shift_matrix[y][x] ^ key_matrix[y][x];
+                    plaintext_temp[(byte_msb_o) -:BYTE] = inverse_sub_bytes_matrix[y][x] ^ inverse_key_matrix[y][x];
                 end
             end
         end
@@ -130,11 +131,13 @@ function [BYTE-1:0] multxn2;
     input integer n_times;
     begin
         integer i;
-        logic [BYTE-1:0] temp = multiplicand;
+        // logic [BYTE-1:0] temp = multiplicand;
         for(i = 0; i<n_times; i++) begin
-            temp = (temp<<1) ^ ((temp[7])? 8'h1b : 8'h00);
+            // temp = (temp<<1) ^ ((temp[7])? 8'h1b : 8'h00);
+            multiplicand = (multiplicand<<1) ^ ((multiplicand[7])? 8'h1b : 8'h00);
         end
-        multxn2 = temp;
+        // multxn2 = temp;
+        multxn2 = multiplicand;
     end
 endfunction
 
@@ -142,7 +145,7 @@ endfunction
 function [BYTE-1:0] multx0e;
     input [BYTE-1:0] multiplicand;
     begin
-        multx2 = multxn2 (multiplicand,3) ^ multxn2(multiplicand,2) ^ multxn2(multiplicand,1);
+        multx0e = multxn2 (multiplicand,3) ^ multxn2(multiplicand,2) ^ multxn2(multiplicand,1);
     end
 endfunction
 
@@ -150,7 +153,7 @@ endfunction
 function [BYTE-1:0] multx0b;
     input [BYTE-1:0] multiplicand;
     begin
-        multx2 = multxn2 (multiplicand,3) ^ multxn2(multiplicand,1) ^ multiplicand;
+        multx0b = multxn2 (multiplicand,3) ^ multxn2(multiplicand,1) ^ multiplicand;
     end
 endfunction
 
@@ -158,7 +161,7 @@ endfunction
 function [BYTE-1:0] multx0d;
     input [BYTE-1:0] multiplicand;
     begin
-        multx2 = multxn2 (multiplicand,3) ^ multxn2(multiplicand,2) ^ multiplicand;
+        multx0d = multxn2 (multiplicand,3) ^ multxn2(multiplicand,2) ^ multiplicand;
     end
 endfunction
 
@@ -166,22 +169,24 @@ endfunction
 function [BYTE-1:0] multx09;
     input [BYTE-1:0] multiplicand;
     begin
-        multx2 = multxn2 (multiplicand,3) ^ multiplicand;
+        multx09 = multxn2 (multiplicand,3) ^ multiplicand;
     end
 endfunction
 
 // ------ Inverse Mix column logic generation
 generate
+    always @(*) begin
     if(!LAST_ROUND) begin
         integer index;
-        always @(*) begin
-            for(index = 0; index < MAT_NUM_COLUMN; index++) begin
-                plaintext[(DATA_WIDTH - (index * WORD_SIZE) - 1) -:BYTE]            = (multx0e(inverse_mix_columns_matrix[0][index])) ^ (multx0b(inverse_mix_columns_matrix[1][index])) ^ (multx0d(inverse_mix_columns_matrix[2][index])) ^ (multx09(inverse_mix_columns_matrix[3][index]));
-                plaintext[(DATA_WIDTH - (BYTE) - (index * WORD_SIZE) - 1) -:BYTE]   = (multx09(inverse_mix_columns_matrix[0][index])) ^ (multx0e(inverse_mix_columns_matrix[1][index])) ^ (multx0b(inverse_mix_columns_matrix[2][index])) ^ (multx0d(inverse_mix_columns_matrix[3][index]));
-                plaintext[(DATA_WIDTH - (2*BYTE) - (index * WORD_SIZE) - 1) -:BYTE] = (multx0d(inverse_mix_columns_matrix[0][index])) ^ (multx09(inverse_mix_columns_matrix[1][index])) ^ (multx0e(inverse_mix_columns_matrix[2][index])) ^ (multx0b(inverse_mix_columns_matrix[3][index]));
-                plaintext[(DATA_WIDTH - (3*BYTE) - (index * WORD_SIZE) - 1) -:BYTE] = (multx0b(inverse_mix_columns_matrix[0][index])) ^ (multx0d(inverse_mix_columns_matrix[1][index])) ^ (multx09(inverse_mix_columns_matrix[2][index])) ^ (multx0e(inverse_mix_columns_matrix[3][index]));
-            end
+        for(index = 0; index < MAT_NUM_COLUMN; index++) begin
+            plaintext[(DATA_WIDTH - (index * WORD_SIZE) - 1) -:BYTE]            = (multx0e(inverse_mix_columns_matrix[0][index])) ^ (multx0b(inverse_mix_columns_matrix[1][index])) ^ (multx0d(inverse_mix_columns_matrix[2][index])) ^ (multx09(inverse_mix_columns_matrix[3][index]));
+            plaintext[(DATA_WIDTH - (BYTE) - (index * WORD_SIZE) - 1) -:BYTE]   = (multx09(inverse_mix_columns_matrix[0][index])) ^ (multx0e(inverse_mix_columns_matrix[1][index])) ^ (multx0b(inverse_mix_columns_matrix[2][index])) ^ (multx0d(inverse_mix_columns_matrix[3][index]));
+            plaintext[(DATA_WIDTH - (2*BYTE) - (index * WORD_SIZE) - 1) -:BYTE] = (multx0d(inverse_mix_columns_matrix[0][index])) ^ (multx09(inverse_mix_columns_matrix[1][index])) ^ (multx0e(inverse_mix_columns_matrix[2][index])) ^ (multx0b(inverse_mix_columns_matrix[3][index]));
+            plaintext[(DATA_WIDTH - (3*BYTE) - (index * WORD_SIZE) - 1) -:BYTE] = (multx0b(inverse_mix_columns_matrix[0][index])) ^ (multx0d(inverse_mix_columns_matrix[1][index])) ^ (multx09(inverse_mix_columns_matrix[2][index])) ^ (multx0e(inverse_mix_columns_matrix[3][index]));
         end
+    end else begin
+        plaintext = plaintext_temp;
+    end
     end
 endgenerate
 endmodule

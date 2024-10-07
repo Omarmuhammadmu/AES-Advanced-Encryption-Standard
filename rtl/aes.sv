@@ -35,10 +35,14 @@ module aes(
     input  logic                    clk,  
     input  logic                    rst,  
     input  logic                    start_encryption,
+    input  logic                    start_decryption,
     input  logic [DATA_WIDTH-1:0]   plaintext_encryption,
+    input  logic [DATA_WIDTH-1:0]   cyphertext_decryption,
     input  logic [DATA_WIDTH-1:0]   key_encryption,
     output logic [DATA_WIDTH-1:0]   cyphertext_encryption,
-    output logic                    done_encryption
+    output logic [DATA_WIDTH-1:0]   plaintext_decryption,
+    output logic                    done_encryption,
+    output logic                    done_decyption
 );
 
 logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key;
@@ -68,11 +72,11 @@ key_expansion u_key_expansion
 aes_decipher u_aes_decipher(
     .clk        (clk),  
     .rst        (rst),  
-    .start_dec  (),
-    .cyphertext (),
+    .start_dec  (start_decryption),
+    .cyphertext (cyphertext_decryption),
     .round_keys (expansioned_key),
-    .plaintext  (),
-    .done_dec   ()
+    .plaintext  (plaintext_decryption),
+    .done_dec   (done_decyption)
 );
 
 endmodule

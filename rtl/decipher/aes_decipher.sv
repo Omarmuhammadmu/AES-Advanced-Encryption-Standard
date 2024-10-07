@@ -46,9 +46,9 @@ module aes_decipher (
 ------------------------------------------------------------*/
 logic [DATA_WIDTH-1:0]  pre_first_round;
 logic [DATA_WIDTH-1:0]  round_key              [0 : NUM_OF_ROUNDS];
-logic [DATA_WIDTH-1:0]  internal_cypherdata    [0 : NUM_OF_ROUNDS - 2];
-logic [DATA_WIDTH-1:0]  plaintext_q;
-logic [DATA_WIDTH-1:0]  cyphertext_c;
+logic [DATA_WIDTH-1:0]  internal_plaintext    [0 : NUM_OF_ROUNDS - 2];
+logic [DATA_WIDTH-1:0]  cyphertext_q;
+logic [DATA_WIDTH-1:0]  plaintext_c;
 logic                   delay_reg;
 
 genvar key_num;
@@ -60,21 +60,21 @@ genvar round_num;
 // Register input and output
 always_ff @(posedge clk or negedge rst) begin
     if(!rst) begin
-        done        <= 'b0;
-        delay_reg   <= 'b0;
-        cyphertext  <= 'b0;
-        plaintext_q <= 'b0;
+        done_dec     <= 'b0;
+        delay_reg    <= 'b0;
+        plaintext    <= 'b0;
+        cyphertext_q <= 'b0;
     end else begin
-        if(start) begin
-            plaintext_q <= plaintext;
+        if(start_dec) begin
+            cyphertext_q <= cyphertext;
         end
 
         if (delay_reg) begin
-            cyphertext <= cyphertext_c;
+            plaintext <= plaintext_c;
         end
         
-        done        <= delay_reg;
-        delay_reg   <= start;
+        done_dec    <= delay_reg;
+        delay_reg   <= start_dec;
     end
 end
 /*----------------------------------------------------------
@@ -91,29 +91,29 @@ endgenerate
 /*----------------------------------------------------------
                     Add inital round key
 ------------------------------------------------------------*/
-assign pre_first_round = plaintext_q ^ round_key [NUM_OF_ROUNDS];
+assign pre_first_round = cyphertext_q ^ round_key [NUM_OF_ROUNDS];
 /*----------------------------------------------------------
                     Rounds generator
 ------------------------------------------------------------*/
 generate
     for (round_num = 0; round_num < NUM_OF_ROUNDS; round_num++) begin :inverse_round_generator_loop
         if (round_num == 0) begin
-            inverse_round #(.LAST_ROUND(1)) u_first_round (
-                .cypherdata(),
-                .key(round_key[round_num + 1]),
-                .plaintext() //decrypted text
+            inverse_round #(.LAST_ROUND(1)) u_last_round (
+                .cypherdata(internal_plaintext[round_num]),
+                .key(round_key[round_num]),
+                .plaintext(plaintext_c) //decrypted text
             );
         end else if(round_num == (NUM_OF_ROUNDS - 1)) begin
-            inverse_round #(.LAST_ROUND(0)) u_last_round (
+            inverse_round #(.LAST_ROUND(0)) u_first_round (
                 .cypherdata(pre_first_round),
-                .key(round_key[round_num + 1]),
-                .plaintext() //internal first
+                .key(round_key[round_num]),
+                .plaintext(internal_plaintext[round_num - 1]) //internal first
             );
         end else begin
             inverse_round #(.LAST_ROUND(0)) u_internal_rounds (
-                .cypherdata(),
-                .key(round_key[round_num + 1]),
-                .plaintext() // internal
+                .cypherdata(internal_plaintext[round_num]),
+                .key(round_key[round_num]),
+                .plaintext(internal_plaintext[round_num - 1]) // internal
             );
         end
     end
