@@ -50,8 +50,7 @@ logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key;
                     Instantiations
 ------------------------------------------------------------*/
 //Chiper
-aes_cipher u_aes_cipher
-(
+aes_cipher u_aes_cipher(
     .clk        (clk),  
     .rst        (rst),
     .start      (start_encryption),
@@ -62,8 +61,7 @@ aes_cipher u_aes_cipher
 );
 
 // Key expansion
-key_expansion u_key_expansion
-(
+key_expansion u_key_expansion(
     .key                (key_encryption),
     .expansioned_key    (expansioned_key)
 );
@@ -78,6 +76,5 @@ aes_decipher u_aes_decipher(
     .plaintext  (plaintext_decryption),
     .done_dec   (done_decyption)
 );
-
 endmodule
 /* ------------------- End Of File -------------------*/
