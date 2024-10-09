@@ -32,6 +32,8 @@
 import aes_package::*;
 
 module key_expansion (
+    input  logic                            clk, 
+    input  logic                            rst, 
     input  logic [DATA_WIDTH-1:0]           key,
     output logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key
 );
@@ -40,12 +42,24 @@ module key_expansion (
 ------------------------------------------------------------*/
 genvar expan_num;
 logic [WORD_SIZE-1:0] g_w [0:NUM_OF_ROUNDS-1];
+logic [DATA_WIDTH-1:0]           key_q;
 
+/*----------------------------------------------------------
+                Registering the input key
+------------------------------------------------------------*/
+always_ff @(posedge clk or negedge rst) begin
+    if(!rst) begin
+        key_q <= 'b0;
+    end else begin
+        key_q <= key;
+
+    end
+end
 /*----------------------------------------------------------
                 Key espansion implementation
 ------------------------------------------------------------*/
 // Original key assigning
-assign expansioned_key [EXPANSIONED_KEY_SIZE-1 -: DATA_WIDTH] = key;
+assign expansioned_key [EXPANSIONED_KEY_SIZE-1 -: DATA_WIDTH] = key_q;
 
 // g_operator and expansion stages
 generate

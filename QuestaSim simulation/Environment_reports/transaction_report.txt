@@ -1,0 +1,46 @@
+[ Driver ] Main task Started
+----------------------------
+
+-------------- Transaction #0 --------------
+ Key text: a0314ff031784255c6eb547573f8c783 
+ 01 
+ Cipher text: 5665a6613fd68597347dd42064a9a52b 
+
+-------------- Transaction #1 --------------
+ Key text: 1030e17bba429e61afd9bee1216e2070 
+ 10 
+ Plain text: dc97c0498d8304181689331243648625 
+
+-------------- Transaction #2 --------------
+ Key text: a686c40157147374dca19b0ce5074ae2 
+ 10 
+ Plain text: b253c8c92dfedb831845b21e60fa9f8c 
+
+-------------- Transaction #3 --------------
+ Key text: 3a388230164b440f4f6413db8440f20d 
+ 00 
+
+-------------- Transaction #4 --------------
+ Key text: b5752e100006180cf038694b31a1a1c9 
+ 00 
+
+-------------- Transaction #5 --------------
+ Key text: ff0d061b4b01466ce821d902a4fadd25 
+ 10 
+ Plain text: bd0d422e61845d64e2e776ab68902fdc 
+
+-------------- Transaction #6 --------------
+ Key text: 8f428ff397fd807d7de2dbfcdca32c3b 
+ 00 
+
+-------------- Transaction #7 --------------
+ Key text: 933d697bde8efadb096d97b8c2604653 
+ 00 
+
+-------------- Transaction #8 --------------
+ Key text: 7350a77fb34c81f0fb9f2841eab8352b 
+ 00 
+
+-------------- Transaction #9 --------------
+ Key text: e1a19f27dae2da70858785d9bb3e0b29 
+ 00 

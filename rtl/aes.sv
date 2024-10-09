@@ -31,19 +31,7 @@
    -FHDR------------------------------------------------------------------------*/
 import aes_package::*;
 
-module aes(
-    input  logic                    clk,  
-    input  logic                    rst,  
-    input  logic                    start_encryption,
-    input  logic                    start_decryption,
-    input  logic [DATA_WIDTH-1:0]   plaintext_encryption,
-    input  logic [DATA_WIDTH-1:0]   cyphertext_decryption,
-    input  logic [DATA_WIDTH-1:0]   key_encryption,
-    output logic [DATA_WIDTH-1:0]   cyphertext_encryption,
-    output logic [DATA_WIDTH-1:0]   plaintext_decryption,
-    output logic                    done_encryption,
-    output logic                    done_decyption
-);
+module aes(aes_interface.aes_intf intf);
 
 logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key;
 /*----------------------------------------------------------
@@ -51,30 +39,32 @@ logic [EXPANSIONED_KEY_SIZE-1:0] expansioned_key;
 ------------------------------------------------------------*/
 //Chiper
 aes_cipher u_aes_cipher(
-    .clk        (clk),  
-    .rst        (rst),
-    .start      (start_encryption),
-    .plaintext  (plaintext_encryption),
+    .clk        (intf.clk),  
+    .rst        (intf.rst),
+    .start      (intf.start_encryption),
+    .plaintext  (intf.plaintext_encryption),
     .round_keys (expansioned_key),
-    .cyphertext (cyphertext_encryption),
-    .done       (done_encryption)
+    .cyphertext (intf.cyphertext_encryption),
+    .done       (intf.done_encryption)
 );
 
 // Key expansion
 key_expansion u_key_expansion(
-    .key                (key_encryption),
+    .clk                (intf.clk),
+    .rst                (intf.rst),
+    .key                (intf.key_encryption),
     .expansioned_key    (expansioned_key)
 );
 
 // Dicipher
 aes_decipher u_aes_decipher(
-    .clk        (clk),  
-    .rst        (rst),  
-    .start_dec  (start_decryption),
-    .cyphertext (cyphertext_decryption),
+    .clk        (intf.clk),  
+    .rst        (intf.rst),  
+    .start_dec  (intf.start_decryption),
+    .cyphertext (intf.cyphertext_decryption),
     .round_keys (expansioned_key),
-    .plaintext  (plaintext_decryption),
-    .done_dec   (done_decyption)
+    .plaintext  (intf.plaintext_decryption),
+    .done_dec   (intf.done_decyption)
 );
 endmodule
 /* ------------------- End Of File -------------------*/
