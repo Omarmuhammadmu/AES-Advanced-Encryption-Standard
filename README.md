@@ -4,6 +4,17 @@ AES-128 is a symmetric encryption algorithm standardized by the National Institu
 # AES Algorithem overview
 <img src="https://github.com/user-attachments/assets/b5708b66-67f5-463f-94fd-7f0518a286d3" width="300" />
 
+The AES-128 encryption process consists of several stages:
+
+- **Key Expansion**: The 128-bit key is expanded into multiple round keys.
+- **Initial Round**: An XOR operation is performed between the plaintext and the first round key.
+- **Main Rounds (10 total)**: Each round involves the following operations:
+  - **SubBytes**: Byte-level substitution using a non-linear S-box.
+  - **ShiftRows**: Row-level shifting to ensure diffusion.
+  - **MixColumns**: Column-wise mixing to enhance data diffusion.
+  - **AddRoundKey**: An XOR operation with the round key.
+- **Final Round**: Similar to the main rounds, but without the MixColumns step.
+
 # Synthesized block diagram using Quartus Prime
 ![aes synthesis using quartus](https://github.com/user-attachments/assets/7d2ccc31-4d6f-4387-8a46-ecc3949bec18)
 
