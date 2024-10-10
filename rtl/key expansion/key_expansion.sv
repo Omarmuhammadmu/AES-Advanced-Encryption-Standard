@@ -52,7 +52,6 @@ always_ff @(posedge clk or negedge rst) begin
         key_q <= 'b0;
     end else begin
         key_q <= key;
-
     end
 end
 /*----------------------------------------------------------

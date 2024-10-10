@@ -1,0 +1,36 @@
+[ Monitor ] Main task Started
+----------------------------
+------ Transaction #0 ------
+Key: 63397faaed2bd4fc8ff0f2e477f6c00f
+i_CipherText:ef9fbaf043aebbb0a39ed5292dc89ab7
+o_plainText:c23cc1d450dcbd38465fbe27a0dc2e98
+------ Transaction #1 ------
+No output
+------ Transaction #2 ------
+Key: ae72c1394413b097e4cee1e1b2d4cd26
+i_plainText:45719f845fc7356e226f46b09d624eb1
+o_CipherText:5b61de94f8005fb7acd77c3380385ddb
+------ Transaction #3 ------
+Key: 1316ea0c6997d622c74e44e1041ff4f3
+i_CipherText:de33f8f2a579414375ce631414be9833
+o_plainText:298f18af6e782b3b4d7397e63aecb7cc
+------ Transaction #4 ------
+Key: 8519bfdbe945cfbebcf476765f0a2c18
+i_CipherText:a35bd6c98a8866229fdf30553c28226c
+o_plainText:1e5c4cf852e0cd15935cc0ceee998af8
+------ Transaction #5 ------
+No output
+------ Transaction #6 ------
+No output
+------ Transaction #7 ------
+Key: d93a55620e7810a4d199857c37e10eb2
+i_plainText:74ee4d56ed29badf56a8b5c4160e674b
+o_CipherText:7911fe0e78a9e96e01af6c7eacd6b085
+------ Transaction #8 ------
+Key: c5eadc06b76f0ec8d510ccd7ce113
+i_plainText:d5befc17e2edf3c147ebcc718306db47
+o_CipherText:60e26019286ae921a5377ea6911b4805
+------ Transaction #9 ------
+Key: b32fdb3670d57acedc7bf66ff15c9581
+i_plainText:3cc4c8f9cc90973f3e41d2b735ca5eb4
+o_CipherText:1a9a7829d00047c2cc8452ee1ffee717

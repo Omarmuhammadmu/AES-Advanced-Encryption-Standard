@@ -41,12 +41,16 @@ class driver;
       gen2driv.get(trans);
       @(posedge vif.clk);
       vif.key_encryption        <= trans.aes_key;
-      vif.start_encryption      <= trans.start_encryption;
-      vif.start_decryption      <= trans.start_decryption;
       vif.plaintext_encryption  <= trans.plainText;
       vif.cyphertext_decryption <= trans.cipherText;
+      vif.start_encryption      <= trans.start_encryption;
+      vif.start_decryption      <= trans.start_decryption;
+      @(posedge vif.clk)
+      vif.start_encryption      <= 0;
+      vif.start_decryption      <= 0;
       trans.display(no_transactions,file_dir);
       trans.golden_ref_input(golden_file_dir);
+      @(posedge vif.clk)
       no_transactions++;
     end
   endtask

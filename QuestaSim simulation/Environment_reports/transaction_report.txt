@@ -2,45 +2,48 @@
 ----------------------------
 
 -------------- Transaction #0 --------------
- Key text: a0314ff031784255c6eb547573f8c783 
+ Key text: 63397faaed2bd4fc8ff0f2e477f6c00f 
  01 
- Cipher text: 5665a6613fd68597347dd42064a9a52b 
+ Cipher text: ef9fbaf043aebbb0a39ed5292dc89ab7 
 
 -------------- Transaction #1 --------------
- Key text: 1030e17bba429e61afd9bee1216e2070 
- 10 
- Plain text: dc97c0498d8304181689331243648625 
+ Key text: b35001aeb4d279af8f140c094517b6a2 
+ 00 
 
 -------------- Transaction #2 --------------
- Key text: a686c40157147374dca19b0ce5074ae2 
+ Key text: ae72c1394413b097e4cee1e1b2d4cd26 
  10 
- Plain text: b253c8c92dfedb831845b21e60fa9f8c 
+ Plain text: 45719f845fc7356e226f46b09d624eb1 
 
 -------------- Transaction #3 --------------
- Key text: 3a388230164b440f4f6413db8440f20d 
- 00 
+ Key text: 1316ea0c6997d622c74e44e1041ff4f3 
+ 01 
+ Cipher text: de33f8f2a579414375ce631414be9833 
 
 -------------- Transaction #4 --------------
- Key text: b5752e100006180cf038694b31a1a1c9 
- 00 
+ Key text: 8519bfdbe945cfbebcf476765f0a2c18 
+ 01 
+ Cipher text: a35bd6c98a8866229fdf30553c28226c 
 
 -------------- Transaction #5 --------------
- Key text: ff0d061b4b01466ce821d902a4fadd25 
- 10 
- Plain text: bd0d422e61845d64e2e776ab68902fdc 
+ Key text: ea523fe7a310a6d31ac0503d14b725b6 
+ 00 
 
 -------------- Transaction #6 --------------
- Key text: 8f428ff397fd807d7de2dbfcdca32c3b 
+ Key text: 1c1755d956eb5aad179600366d0174fc 
  00 
 
 -------------- Transaction #7 --------------
- Key text: 933d697bde8efadb096d97b8c2604653 
- 00 
+ Key text: d93a55620e7810a4d199857c37e10eb2 
+ 10 
+ Plain text: 74ee4d56ed29badf56a8b5c4160e674b 
 
 -------------- Transaction #8 --------------
- Key text: 7350a77fb34c81f0fb9f2841eab8352b 
- 00 
+ Key text: c5eadc06b76f0ec8d510ccd7ce113 
+ 10 
+ Plain text: d5befc17e2edf3c147ebcc718306db47 
 
 -------------- Transaction #9 --------------
- Key text: e1a19f27dae2da70858785d9bb3e0b29 
- 00 
+ Key text: b32fdb3670d57acedc7bf66ff15c9581 
+ 10 
+ Plain text: 3cc4c8f9cc90973f3e41d2b735ca5eb4 

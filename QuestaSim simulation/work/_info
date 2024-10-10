@@ -20,6 +20,17 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
+R0
 !s11f vlog 2021.1 2021.01, Jan 19 2021
 13
 !s112 1.1
@@ -44,10 +55,10 @@ T_opt1
 !s11d aes_interface 1 0 
 !s11d simulation/work 1 0 
 !s11d testbench_sv_unit D:/AES/AES-Advanced-Encryption-Standard/QuestaSim 0 
-!s110 1728509696
-VZ5Wh61ROWe42?m0;AgOo]0
+!s110 1728597074
+VYb]HOd=0GiOj3<e5@>3if1
 04 10 4 work tbench_top fast 0
-=1-30e1718d4a4b-6706f700-1a4-2e74
+=1-30e1718d4a4b-67084c52-1f2-2a04
 R2
 R3
 R4
@@ -57,7 +68,7 @@ vaes
 Z6 DXx6 sv_std 3 std 0 22 9oUSJO;AeEaW`l:M@^WG92
 Z7 DXx4 work 11 aes_package 0 22 [cT3@DZ4Tb95@`m3D`aHm0
 DXx4 work 11 aes_sv_unit 0 22 ]6Xeg3E@LiEhUo_gWT0:20
-Z8 !s110 1728509695
+Z8 !s110 1728597073
 Z9 VDg1SIo80bB@j0V0VzS_@n1
 r1
 !s85 0
@@ -70,11 +81,11 @@ Z10 dD:/AES/AES-Advanced-Encryption-Standard/QuestaSim simulation
 Z11 w1728506222
 Z12 8../rtl/aes.sv
 Z13 F../rtl/aes.sv
-!i122 556
+!i122 791
 L0 34 36
 Z14 OL;L;2021.1;73
 31
-Z15 !s108 1728509695.000000
+Z15 !s108 1728597073.000000
 Z16 !s107 ../rtl/aes.sv|
 Z17 !s90 -reportprogress|300|-work|work|../rtl/aes.sv|
 !i113 0
@@ -84,7 +95,7 @@ vaes_cipher
 R6
 R7
 DXx4 work 18 aes_cipher_sv_unit 0 22 ;<1OTh^]OiF`Vfn7bJ@>o0
-Z19 !s110 1728509694
+Z19 !s110 1728597072
 R9
 r1
 !s85 0
@@ -97,11 +108,11 @@ R10
 Z20 w1728085484
 Z21 8../rtl/cipher/aes_cipher.sv
 Z22 F../rtl/cipher/aes_cipher.sv
-!i122 550
+!i122 785
 L0 35 88
 R14
 31
-Z23 !s108 1728509694.000000
+Z23 !s108 1728597072.000000
 Z24 !s107 ../rtl/cipher/aes_cipher.sv|
 Z25 !s90 -reportprogress|300|-work|work|../rtl/cipher/aes_cipher.sv|
 !i113 0
@@ -123,7 +134,7 @@ R10
 R20
 R21
 R22
-!i122 550
+!i122 785
 Z26 L0 33 0
 R14
 31
@@ -137,7 +148,7 @@ vaes_decipher
 R6
 R7
 DXx4 work 20 aes_decipher_sv_unit 0 22 <Ll<nFg@2ezV]BPTU[T202
-R19
+R8
 R9
 r1
 !s85 0
@@ -150,7 +161,7 @@ R10
 Z27 w1728317008
 Z28 8../rtl/decipher/aes_decipher.sv
 Z29 F../rtl/decipher/aes_decipher.sv
-!i122 553
+!i122 788
 L0 35 87
 R14
 31
@@ -163,7 +174,7 @@ R4
 Xaes_decipher_sv_unit
 R6
 R7
-R19
+R8
 V<Ll<nFg@2ezV]BPTU[T202
 r1
 !s85 0
@@ -176,7 +187,7 @@ R10
 R27
 R28
 R29
-!i122 553
+!i122 788
 R26
 R14
 31
@@ -198,7 +209,7 @@ R10
 w1728486386
 8../rtl/aes_interface.sv
 F../rtl/aes_interface.sv
-!i122 547
+!i122 782
 Z32 L0 1 0
 R9
 R14
@@ -213,7 +224,7 @@ R18
 R4
 Xaes_package
 R6
-!s110 1728509693
+R19
 !i10b 1
 !s100 F]i6bdlKKWW;;2cDYAY>C3
 I[cT3@DZ4Tb95@`m3D`aHm0
@@ -222,14 +233,14 @@ R10
 w1728085557
 8../rtl/aes_package.sv
 F../rtl/aes_package.sv
-!i122 546
+!i122 781
 L0 17 0
 V[cT3@DZ4Tb95@`m3D`aHm0
 R14
 r1
 !s85 0
 31
-!s108 1728509693.000000
+R23
 !s107 ../rtl/aes_package.sv|
 !s90 -reportprogress|300|-work|work|../rtl/aes_package.sv|
 !i113 0
@@ -251,7 +262,7 @@ R10
 R11
 R12
 R13
-!i122 556
+!i122 791
 Z33 L0 32 0
 R14
 31
@@ -347,27 +358,28 @@ R41
 R6
 R7
 R8
-V4R=;>beoOgc8gFRgEnGCb2
+V_>JLBl9@G@:l9OMbgiHe12
 r1
 !s85 0
 !i10b 1
-!s100 F;8VGgVcYbR9;44ckTSm00
-I4R=;>beoOgc8gFRgEnGCb2
+!s100 SiN080JUfdbWERFE`>:2_1
+I_>JLBl9@G@:l9OMbgiHe12
 !i103 1
 S1
 R10
-Z46 w1728509686
+Z46 w1728597055
 8../testbench/SystemVerilog Environment/environment.sv
 Z47 F../testbench/SystemVerilog Environment/environment.sv
 R44
 Z48 F../testbench/SystemVerilog Environment/generator.sv
 R43
-!i122 557
+Z49 F../testbench/SystemVerilog Environment/monitor.sv
+!i122 792
 R32
 R14
 31
 R15
-!s107 ../testbench/SystemVerilog Environment/driver.sv|../testbench/SystemVerilog Environment/generator.sv|../testbench/SystemVerilog Environment/transaction.sv|../testbench/SystemVerilog Environment/environment.sv|
+!s107 ../testbench/SystemVerilog Environment/monitor.sv|../testbench/SystemVerilog Environment/driver.sv|../testbench/SystemVerilog Environment/generator.sv|../testbench/SystemVerilog Environment/transaction.sv|../testbench/SystemVerilog Environment/environment.sv|
 !s90 -reportprogress|300|-work|work|../testbench/SystemVerilog Environment/environment.sv|
 !i113 0
 R18
@@ -386,16 +398,16 @@ IQ8^kMWNBk585Ib1UO@S7c2
 !s105 g_operator_sv_unit
 S1
 R10
-Z49 w1728085772
-Z50 8../rtl/key expansion/g_operator.sv
-Z51 F../rtl/key expansion/g_operator.sv
-!i122 554
+Z50 w1728085772
+Z51 8../rtl/key expansion/g_operator.sv
+Z52 F../rtl/key expansion/g_operator.sv
+!i122 789
 L0 35 55
 R14
 31
-R23
-Z52 !s107 ../rtl/key expansion/g_operator.sv|
-Z53 !s90 -reportprogress|300|-work|work|../rtl/key expansion/g_operator.sv|
+R15
+Z53 !s107 ../rtl/key expansion/g_operator.sv|
+Z54 !s90 -reportprogress|300|-work|work|../rtl/key expansion/g_operator.sv|
 !i113 0
 R18
 R4
@@ -412,16 +424,16 @@ IzX@SnnSUXb:KVZ1Z@:o9j1
 !i103 1
 S1
 R10
-R49
 R50
 R51
-!i122 554
+R52
+!i122 789
 R26
 R14
 31
-R23
-R52
+R15
 R53
+R54
 !i113 0
 R18
 R4
@@ -466,16 +478,16 @@ I@hjGUCJKXOGzEGZ=agQe02
 !s105 inverse_round_sv_unit
 S1
 R10
-Z54 w1728314458
-Z55 8../rtl/decipher/inverse_round.sv
-Z56 F../rtl/decipher/inverse_round.sv
-!i122 552
+Z55 w1728314458
+Z56 8../rtl/decipher/inverse_round.sv
+Z57 F../rtl/decipher/inverse_round.sv
+!i122 787
 L0 35 158
 R14
 31
 R23
-Z57 !s107 ../rtl/decipher/inverse_round.sv|
-Z58 !s90 -reportprogress|300|-work|work|../rtl/decipher/inverse_round.sv|
+Z58 !s107 ../rtl/decipher/inverse_round.sv|
+Z59 !s90 -reportprogress|300|-work|work|../rtl/decipher/inverse_round.sv|
 !i113 0
 R18
 R4
@@ -492,16 +504,16 @@ IKRC;Dn1]3Q0:K@iDP=iCI2
 !i103 1
 S1
 R10
-R54
 R55
 R56
-!i122 552
+R57
+!i122 787
 R26
 R14
 31
 R23
-R57
 R58
+R59
 !i113 0
 R18
 R4
@@ -519,16 +531,16 @@ Ifm2J;1Koc?<M1;6UFfzeS1
 !s105 inverse_sbox_sv_unit
 S1
 R10
-Z59 w1728130582
-Z60 8../rtl/decipher/inverse_sbox.sv
-Z61 F../rtl/decipher/inverse_sbox.sv
-!i122 551
+Z60 w1728130582
+Z61 8../rtl/decipher/inverse_sbox.sv
+Z62 F../rtl/decipher/inverse_sbox.sv
+!i122 786
 L0 36 282
 R14
 31
 R23
-Z62 !s107 ../rtl/decipher/inverse_sbox.sv|
-Z63 !s90 -reportprogress|300|-work|work|../rtl/decipher/inverse_sbox.sv|
+Z63 !s107 ../rtl/decipher/inverse_sbox.sv|
+Z64 !s90 -reportprogress|300|-work|work|../rtl/decipher/inverse_sbox.sv|
 !i113 0
 R18
 R4
@@ -545,43 +557,43 @@ I4E4ThZC1^P[W9_OzidPhT1
 !i103 1
 S1
 R10
-R59
 R60
 R61
-!i122 551
+R62
+!i122 786
 L0 34 0
 R14
 31
 R23
-R62
 R63
+R64
 !i113 0
 R18
 R4
 vkey_expansion
 R6
 R7
-DXx4 work 21 key_expansion_sv_unit 0 22 XAB]mCfP;hMNWCXfhLZI30
+DXx4 work 21 key_expansion_sv_unit 0 22 P;oQ`6jK^KS59To^ZnFFU2
 R8
 R9
 r1
 !s85 0
 !i10b 1
-!s100 M8J;UUAX?1M0H7b6^JjOI0
-IRlBfBG;f_9]LN6AlBEK3O0
+!s100 59TeQ@e3KbdnR_X>^]oN]3
+IFzz4RgD3J6TJD=:3PacMT1
 !s105 key_expansion_sv_unit
 S1
 R10
-Z64 w1728506125
-Z65 8../rtl/key expansion/key_expansion.sv
-Z66 F../rtl/key expansion/key_expansion.sv
-!i122 555
-L0 34 45
+Z65 w1728510069
+Z66 8../rtl/key expansion/key_expansion.sv
+Z67 F../rtl/key expansion/key_expansion.sv
+!i122 790
+L0 34 44
 R14
 31
 R15
-Z67 !s107 ../rtl/key expansion/key_expansion.sv|
-Z68 !s90 -reportprogress|300|-work|work|../rtl/key expansion/key_expansion.sv|
+Z68 !s107 ../rtl/key expansion/key_expansion.sv|
+Z69 !s90 -reportprogress|300|-work|work|../rtl/key expansion/key_expansion.sv|
 !i113 0
 R18
 R4
@@ -589,25 +601,25 @@ Xkey_expansion_sv_unit
 R6
 R7
 R8
-VXAB]mCfP;hMNWCXfhLZI30
+VP;oQ`6jK^KS59To^ZnFFU2
 r1
 !s85 0
 !i10b 1
-!s100 E>6GI[j@gm1G_1Gg492jU3
-IXAB]mCfP;hMNWCXfhLZI30
+!s100 1VAb5Q11TSoZ``DOd`4Xg2
+IP;oQ`6jK^KS59To^ZnFFU2
 !i103 1
 S1
 R10
-R64
 R65
 R66
-!i122 555
+R67
+!i122 790
 R33
 R14
 31
 R15
-R67
 R68
+R69
 !i113 0
 R18
 R4
@@ -616,28 +628,29 @@ R41
 R6
 R7
 R8
-VaKECVWkn4M1UDjnZXEVII2
+VeNODU@41TML2CcT0X[4[^2
 r1
 !s85 0
 !i10b 1
-!s100 R;Bj>[ZS;WO6b2L_0VFZB3
-IaKECVWkn4M1UDjnZXEVII2
+!s100 <^<T3E;_@Ge2lzmmzPYkN3
+IeNODU@41TML2CcT0X[4[^2
 !i103 1
 S1
 R10
 R46
-Z69 8../testbench/SystemVerilog Environment/random_test.sv
-Z70 F../testbench/SystemVerilog Environment/random_test.sv
+Z70 8../testbench/SystemVerilog Environment/random_test.sv
+Z71 F../testbench/SystemVerilog Environment/random_test.sv
 R47
 R44
 R48
 R43
-!i122 558
+R49
+!i122 793
 R32
 R14
 31
 R15
-!s107 ../testbench/SystemVerilog Environment/driver.sv|../testbench/SystemVerilog Environment/generator.sv|../testbench/SystemVerilog Environment/transaction.sv|../testbench/SystemVerilog Environment/environment.sv|../testbench/SystemVerilog Environment/random_test.sv|
+!s107 ../testbench/SystemVerilog Environment/monitor.sv|../testbench/SystemVerilog Environment/driver.sv|../testbench/SystemVerilog Environment/generator.sv|../testbench/SystemVerilog Environment/transaction.sv|../testbench/SystemVerilog Environment/environment.sv|../testbench/SystemVerilog Environment/random_test.sv|
 !s90 -reportprogress|300|-work|work|../testbench/SystemVerilog Environment/random_test.sv|
 !i113 0
 R18
@@ -656,16 +669,16 @@ Ih5C[Iod6bJaP3SbUFc:kY0
 !s105 round_sv_unit
 S1
 R10
-Z71 w1728145271
-Z72 8../rtl/cipher/round.sv
-Z73 F../rtl/cipher/round.sv
-!i122 549
+Z72 w1728145271
+Z73 8../rtl/cipher/round.sv
+Z74 F../rtl/cipher/round.sv
+!i122 784
 L0 35 119
 R14
 31
 R23
-Z74 !s107 ../rtl/cipher/round.sv|
-Z75 !s90 -reportprogress|300|-work|work|../rtl/cipher/round.sv|
+Z75 !s107 ../rtl/cipher/round.sv|
+Z76 !s90 -reportprogress|300|-work|work|../rtl/cipher/round.sv|
 !i113 0
 R18
 R4
@@ -682,16 +695,16 @@ IlnmUbggjfOhZi[Db[L<GA2
 !i103 1
 S1
 R10
-R71
 R72
 R73
-!i122 549
+R74
+!i122 784
 R26
 R14
 31
 R23
-R74
 R75
+R76
 !i113 0
 R18
 R4
@@ -709,16 +722,16 @@ IgVSLMU^EYGkl:3e<@Kj^[2
 !s105 sbox_sv_unit
 S1
 R10
-Z76 w1728129865
-Z77 8../rtl/cipher/sbox.sv
-Z78 F../rtl/cipher/sbox.sv
-!i122 548
+Z77 w1728129865
+Z78 8../rtl/cipher/sbox.sv
+Z79 F../rtl/cipher/sbox.sv
+!i122 783
 L0 35 282
 R14
 31
 R23
-Z79 !s107 ../rtl/cipher/sbox.sv|
-Z80 !s90 -reportprogress|300|-work|work|../rtl/cipher/sbox.sv|
+Z80 !s107 ../rtl/cipher/sbox.sv|
+Z81 !s90 -reportprogress|300|-work|work|../rtl/cipher/sbox.sv|
 !i113 0
 R18
 R4
@@ -735,50 +748,50 @@ I>2cg;Bodj7iR^YO:^8Pzf2
 !i103 1
 S1
 R10
-R76
 R77
 R78
-!i122 548
+R79
+!i122 783
 R26
 R14
 31
 R23
-R79
 R80
+R81
 !i113 0
 R18
 R4
 vtbench_top
 R6
 R7
-Z81 DXx4 work 17 testbench_sv_unit 0 22 g9VzDW3T=0Q;2VM=X]>fa0
+Z82 DXx4 work 17 testbench_sv_unit 0 22 MnBLBzGj3a>T7G9OKzSfg0
 R8
 R9
 r1
 !s85 0
 !i10b 1
-!s100 ^kWEEQYkiJHGmXF?TZ[[j1
-IJEnW7=;P3N<efm0L1AXc62
-Z82 !s105 testbench_sv_unit
+!s100 j<H?9VD@=Jl[YbInY`H_D1
+I[<RYh3SkJ8Tbm8Z]DF3kf2
+Z83 !s105 testbench_sv_unit
 S1
 R10
-w1728508886
-Z83 8../testbench/SystemVerilog Environment/testbench.sv
-Z84 F../testbench/SystemVerilog Environment/testbench.sv
-!i122 559
-L0 5 30
+w1728588724
+Z84 8../testbench/SystemVerilog Environment/testbench.sv
+Z85 F../testbench/SystemVerilog Environment/testbench.sv
+!i122 794
+L0 5 38
 R14
 31
 R15
-Z85 !s107 ../testbench/SystemVerilog Environment/driver.sv|../testbench/SystemVerilog Environment/generator.sv|../testbench/SystemVerilog Environment/transaction.sv|../testbench/SystemVerilog Environment/environment.sv|../testbench/SystemVerilog Environment/random_test.sv|../testbench/SystemVerilog Environment/testbench.sv|
-Z86 !s90 -reportprogress|300|-work|work|../testbench/SystemVerilog Environment/testbench.sv|
+Z86 !s107 ../testbench/SystemVerilog Environment/monitor.sv|../testbench/SystemVerilog Environment/driver.sv|../testbench/SystemVerilog Environment/generator.sv|../testbench/SystemVerilog Environment/transaction.sv|../testbench/SystemVerilog Environment/environment.sv|../testbench/SystemVerilog Environment/random_test.sv|../testbench/SystemVerilog Environment/testbench.sv|
+Z87 !s90 -reportprogress|300|-work|work|../testbench/SystemVerilog Environment/testbench.sv|
 !i113 0
 R18
 R4
 4test
 R6
 R7
-R81
+R82
 R8
 R9
 r1
@@ -786,19 +799,19 @@ r1
 !i10b 1
 !s100 ZVfaOVfY^jNgn7bkQRjn:3
 IaY<h4R^K8>[9>];MzgRAn0
-R82
+R83
 S1
 R10
 w1728508145
-R69
 R70
-!i122 559
+R71
+!i122 794
 L0 2 0
 R14
 31
 R15
-R85
 R86
+R87
 !i113 0
 R18
 R4
@@ -807,30 +820,31 @@ R41
 R6
 R7
 R8
-Vg9VzDW3T=0Q;2VM=X]>fa0
+VMnBLBzGj3a>T7G9OKzSfg0
 r1
 !s85 0
 !i10b 1
-!s100 PAd`S:g]G7mFP5672Mg?C1
-Ig9VzDW3T=0Q;2VM=X]>fa0
+!s100 cM[lVFI6A=f4LXKj<771j2
+IMnBLBzGj3a>T7G9OKzSfg0
 !i103 1
 S1
 R10
 R46
-R83
 R84
-R70
+R85
+R71
 R47
 R44
 R48
 R43
-!i122 559
+R49
+!i122 794
 R32
 R14
 31
 R15
-R85
 R86
+R87
 !i113 0
 R18
 R4

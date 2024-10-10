@@ -13,4 +13,5 @@ quit -sim
     vsim -sv_seed random -voptargs=+acc work.tbench_top
     do {AES_waveform.do}
 
+# coverage save tbench_top.ucdb -onexit 
 run -all

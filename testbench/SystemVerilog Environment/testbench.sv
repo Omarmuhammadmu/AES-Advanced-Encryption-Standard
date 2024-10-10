@@ -11,7 +11,7 @@ module tbench_top;
   
   //clock generation
   always #(CLK_PERIOD/2) clk = ~clk;
-  
+
   //reset Generation
   initial begin
     rst = 0;
@@ -21,6 +21,14 @@ module tbench_top;
   //creatinng instance of interface, inorder to connect DUT and testcase
   aes_interface tb_intf (.clk(clk), .rst(rst));
   
+  // Coverage
+  // covergroup CovGrp @(posedge clk);
+  //   coverpoint tb_intf.start_encryption;
+  //   coverpoint tb_intf.start_decryption;
+  // endgroup
+
+  // CovGrp testcoverage = new();
+
   //Testcase instance, interface handle is passed to test as an argument
   test t1(tb_intf);
   

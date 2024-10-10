@@ -1,19 +1,19 @@
 `include "transaction.sv"
 `include "generator.sv"
 `include "driver.sv"
-// `include "monitor.sv"
+`include "monitor.sv"
 // `include "scoreboard.sv"
 class environment;
   
   //generator and driver instance
   generator 	gen;
   driver    	driv;
-//   monitor   	mon;
+  monitor   	mon;
 //   scoreboard	scb;
   
   //mailbox handle's
   mailbox gen2driv;
-//   mailbox mon2scb;
+  mailbox mon2scb;
   
   //virtual interface
   virtual aes_interface vif;
@@ -30,7 +30,7 @@ class environment;
     //creating generator and driver
     gen  = new(gen2driv);
     driv = new(vif,gen2driv);
-    // mon  = new(vif,mon2scb);
+    mon  = new(vif,mon2scb);
     // scb  = new(mon2scb);
   endfunction
   
@@ -43,7 +43,7 @@ class environment;
     fork 
       gen.main();
       driv.main();
-    //   mon.main();
+      mon.main();
     //   scb.main();
     join_any
   endtask
