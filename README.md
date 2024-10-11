@@ -49,6 +49,14 @@ The AES-128 encryption process consists of several stages:
    <img src="https://github.com/user-attachments/assets/e424efeb-3a49-4e8a-93ce-83f0dbf8f0d9" />
 </p>
 
+- To control the number of testcases change the env.gen.repeat_count in environment.sv
+  ```verilog
+  ...
+  //setting the repeat count of generator and driver
+    env.gen.repeat_count = 30;
+  ...
+  ```
+
 - QuestaSim Transcript for a randomized 10 transaction
 <p align="center">
    <img src="https://github.com/user-attachments/assets/56f96cb0-2122-4c6c-b5ac-0008abaed1b5" border="0" width="900" />
