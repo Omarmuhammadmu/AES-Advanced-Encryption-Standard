@@ -5,6 +5,15 @@
 
 AES-128 is a symmetric encryption algorithm standardized by the National Institute of Standards and Technology (NIST). It operates on fixed block sizes of 128 bits and employs a 128-bit key to encrypt and decrypt data securely. AES-128 is widely used for securing sensitive data due to its strong encryption, efficiency, and resistance to most known attacks.
 
+# AES-Advanced-Encryption-Standard Repo content
+- RTL files of AES written in SystemVerilog HDL language.
+- Simple testbench to initially check the function of the RTL code.
+- SV Environment testbench with randomization of the inputs and the key and comparing the result with aes pyhton model.
+- AES python model.
+- .do files to be used in QuestaSim to compile and run the simulation.
+- AES NIST standard PDF.
+- Snapshots of the synthsized logic using Quartus Prime, SV environment illustraion, and waveforms of both proposed testbenches. 
+
 # AES Algorithem overview
 <p align="center">
   <img src="https://github.com/user-attachments/assets/b5708b66-67f5-463f-94fd-7f0518a286d3" border="0" width="300" />
