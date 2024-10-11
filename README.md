@@ -37,6 +37,8 @@ The AES-128 encryption process consists of several stages:
 </p>
 
 # Simple testbench waveform
+- Testbench summary: An input plain text and key is given to the AES module and on cyphering the text it´s given back to be decyphered and then the input plain text is compared with the dechyphered plain text. And the chiphered text is comapred with the expected value obtained from external website
+- [Website] https://legacy.cryptool.org/en/cto/aes-step-by-step
 <p align="center">
    <img src="https://github.com/user-attachments/assets/b7aab423-1ff3-4ea6-85b4-201c61fb409b" border="0" width="900" />
 </p>
