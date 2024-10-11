@@ -23,3 +23,7 @@ The AES-128 encryption process consists of several stages:
 
 # Simple testbench waveform
 ![dumpy test waveform](https://github.com/user-attachments/assets/b7aab423-1ff3-4ea6-85b4-201c61fb409b)
+
+# SystemVerilog-Environment-base testbench detailes
+- Testbench illustration diagram
+![AES SV environment](https://github.com/user-attachments/assets/e424efeb-3a49-4e8a-93ce-83f0dbf8f0d9)
