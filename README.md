@@ -48,3 +48,13 @@ The AES-128 encryption process consists of several stages:
 <p align="center">
    <img src="https://github.com/user-attachments/assets/e424efeb-3a49-4e8a-93ce-83f0dbf8f0d9" />
 </p>
+
+- QuestaSim Transcript for a randomized 10 transaction
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/56f96cb0-2122-4c6c-b5ac-0008abaed1b5" border="0" width="900" />
+</p>
+
+- QuestaSim Waveviewer shot
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/9a859b4a-3c24-46fa-a97c-5b94b48107b1" border="0" width="900" />
+</p>
