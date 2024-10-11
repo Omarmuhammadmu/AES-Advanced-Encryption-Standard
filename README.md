@@ -24,11 +24,13 @@ The AES-128 encryption process consists of several stages:
 
 # Synthesized block diagram using Quartus Prime
 <p align="center">
-   <img src="https://github.com/user-attachments/assets/7a561e31-1d87-4539-939d-6c17fe320c5d" border="0" width="700" />
+   <img src="https://github.com/user-attachments/assets/7a561e31-1d87-4539-939d-6c17fe320c5d" border="0" width="900" />
 </p>
 
 # Simple testbench waveform
-![dumpy test waveform](https://github.com/user-attachments/assets/b7aab423-1ff3-4ea6-85b4-201c61fb409b)
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/b7aab423-1ff3-4ea6-85b4-201c61fb409b" border="0" width="900" />
+</p>
 
 # SystemVerilog-Environment-base testbench detailes
 - Testbench illustration diagram
