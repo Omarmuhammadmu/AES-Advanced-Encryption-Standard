@@ -1,36 +1,41 @@
 [ Monitor ] Main task Started
 ----------------------------
 ------ Transaction #0 ------
-Key: 63397faaed2bd4fc8ff0f2e477f6c00f
-i_CipherText:ef9fbaf043aebbb0a39ed5292dc89ab7
-o_plainText:c23cc1d450dcbd38465fbe27a0dc2e98
+Key: d793328eb6278de914407dfe2124ddbf
+i_plainText:e939f35bcd42628e1d11537e5ea0c77c
+o_CipherText:22e6952117c8c54d70d1251fe9640fe2
 ------ Transaction #1 ------
-No output
+Key: 9b19d1dc871542fe2fee5fbee523a4e4
+i_plainText:fde9b1a1aac9b95ff7ef8af8f60be6eb
+o_CipherText:3b484af7d3b1183817ebf266df728a65
+Key: 9b19d1dc871542fe2fee5fbee523a4e4
+i_CipherText:6e58de84e4c8cf048eca525f2a0f4f3b
+o_plainText:3c80afc11c8ff84428ddfcc1e75d02dc
 ------ Transaction #2 ------
-Key: ae72c1394413b097e4cee1e1b2d4cd26
-i_plainText:45719f845fc7356e226f46b09d624eb1
-o_CipherText:5b61de94f8005fb7acd77c3380385ddb
+Key: 8ff0a60c3a82f96b2969e6593676dad4
+i_CipherText:d0e1e98f6c679bab1dc132c20ee44eb9
+o_plainText:4455ff9a5fac0fd54366f1e1f123adb8
 ------ Transaction #3 ------
-Key: 1316ea0c6997d622c74e44e1041ff4f3
-i_CipherText:de33f8f2a579414375ce631414be9833
-o_plainText:298f18af6e782b3b4d7397e63aecb7cc
------- Transaction #4 ------
-Key: 8519bfdbe945cfbebcf476765f0a2c18
-i_CipherText:a35bd6c98a8866229fdf30553c28226c
-o_plainText:1e5c4cf852e0cd15935cc0ceee998af8
------- Transaction #5 ------
 No output
+------ Transaction #4 ------
+No output
+------ Transaction #5 ------
+Key: 937ff5d6f4e35ed8e5cd7646a348c88f
+i_plainText:eec37ee49ec19dbde0615d6499cfe00e
+o_CipherText:84867592323dbbcca116d11949f1b177
 ------ Transaction #6 ------
 No output
 ------ Transaction #7 ------
-Key: d93a55620e7810a4d199857c37e10eb2
-i_plainText:74ee4d56ed29badf56a8b5c4160e674b
-o_CipherText:7911fe0e78a9e96e01af6c7eacd6b085
+Key: c5f8ce9ed33ce1ef1f503daabb7b8b2c
+i_plainText:4e6d0b0430ce9237af91fa242f38caef
+o_CipherText:7ab727fa58d0955a2f4de7395f211fc
 ------ Transaction #8 ------
-Key: c5eadc06b76f0ec8d510ccd7ce113
-i_plainText:d5befc17e2edf3c147ebcc718306db47
-o_CipherText:60e26019286ae921a5377ea6911b4805
+Key: e81c7289817eca08a4796d8107547255
+i_plainText:d603a9a10b2f05f96e7e790207c6296d
+o_CipherText:62ad69ab2bee564e5e0e9dff96f0d245
 ------ Transaction #9 ------
-Key: b32fdb3670d57acedc7bf66ff15c9581
-i_plainText:3cc4c8f9cc90973f3e41d2b735ca5eb4
-o_CipherText:1a9a7829d00047c2cc8452ee1ffee717
+Key: 9387aea7075ebb065d013987733c3e0d
+i_CipherText:50b3ec4dffd8a4229534baf89b7c67cf
+o_plainText:d389e69154c90ebdaf6f38d2a575dc9b
+------ Transaction #10 ------
+No output

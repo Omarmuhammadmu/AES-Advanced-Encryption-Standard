@@ -1,3 +1,20 @@
+/* -----------------------------------------------------------------------------
+   Copyright (c) Omar Muhammad Mustafa
+   -----------------------------------------------------------------------------
+   FILE NAME : driver.sv
+   DEPARTMENT : aes SV-environment-based verification 
+   AUTHOR : Omar Muhammad
+   AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+   1.0      2024-10-12              initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES, testbench, verification, SV-based-testbench
+   -----------------------------------------------------------------------------
+   PURPOSE : Driver class of the SV-environment-based testbench
+   -FHDR------------------------------------------------------------------------*/
+
 class driver;
   //used to count the number of transactions
   int no_transactions;
@@ -30,7 +47,6 @@ class driver;
   //drivers the transaction items to interface signals
   task main;
     string file_dir = "Environment_reports/transaction_report.txt";
-    string golden_file_dir = "Environment_reports/golden_ref_inputs.txt";
     integer transaction_report = $fopen(file_dir, "w");
     $fdisplay(transaction_report, "[ Driver ] Main task Started");
     $fdisplay(transaction_report, "----------------------------");
@@ -49,7 +65,6 @@ class driver;
       vif.start_encryption      <= 0;
       vif.start_decryption      <= 0;
       trans.display(no_transactions,file_dir);
-      trans.golden_ref_input(golden_file_dir);
       @(posedge vif.clk)
       no_transactions++;
     end

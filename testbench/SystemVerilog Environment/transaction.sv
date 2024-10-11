@@ -1,3 +1,20 @@
+/* -----------------------------------------------------------------------------
+   Copyright (c) Omar Muhammad Mustafa
+   -----------------------------------------------------------------------------
+   FILE NAME : transaction.sv
+   DEPARTMENT : aes SV-environment-based verification 
+   AUTHOR : Omar Muhammad
+   AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+   1.0      2024-10-12              initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES, testbench, verification, SV-based-testbench
+   -----------------------------------------------------------------------------
+   PURPOSE : transaction class of the SV-environment-based testbench
+   -FHDR------------------------------------------------------------------------*/
+
 import aes_package::*;
 
 class transaction;
@@ -23,21 +40,6 @@ class transaction;
             $fdisplay(transaction_report, " Cipher text: %0h ", cipherText);
         end
         $fclose(transaction_report);
-    endfunction
-
-    function void golden_ref_input(string file_dir);
-        integer golden_ref_input_file = $fopen(file_dir, "a");
-        if(start_encryption) begin
-            $fdisplay(golden_ref_input_file, "e");
-            $fdisplay(golden_ref_input_file, "%0h", aes_key);
-            $fdisplay(golden_ref_input_file, "%0h", plainText);
-        end
-        if(start_decryption) begin
-            $fdisplay(golden_ref_input_file, "d");
-            $fdisplay(golden_ref_input_file, "%0h", aes_key);
-            $fdisplay(golden_ref_input_file, "%0h", cipherText);
-        end
-        $fclose(golden_ref_input_file);
     endfunction
 
     function void reportio;

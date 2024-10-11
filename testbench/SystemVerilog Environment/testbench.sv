@@ -1,6 +1,21 @@
+/* -----------------------------------------------------------------------------
+   Copyright (c) Omar Muhammad Mustafa
+   -----------------------------------------------------------------------------
+   FILE NAME : testbench.sv
+   DEPARTMENT : aes SV-environment-based verification 
+   AUTHOR : Omar Muhammad
+   AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+   1.0      2024-10-12              initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES, testbench, verification, SV-based-testbench
+   -----------------------------------------------------------------------------
+   PURPOSE : testbench top module of the SV-environment-based testbench
+   -FHDR------------------------------------------------------------------------*/
+
 `include "random_test.sv"
-//`include "directed_test.sv"
-//----------------------------------------------------------------
 
 module tbench_top;
   localparam CLK_PERIOD = 10;

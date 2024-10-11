@@ -1,5 +1,20 @@
 
-//Samples the interface signals, captures into transaction packet and send the packet to scoreboard.
+/* -----------------------------------------------------------------------------
+   Copyright (c) Omar Muhammad Mustafa
+   -----------------------------------------------------------------------------
+   FILE NAME : monitor.sv
+   DEPARTMENT : aes SV-environment-based verification 
+   AUTHOR : Omar Muhammad
+   AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+   1.0      2024-10-12              initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES, testbench, verification, SV-based-testbench
+   -----------------------------------------------------------------------------
+   PURPOSE : monitor class of the SV-environment-based testbench
+   -FHDR------------------------------------------------------------------------*/
 
 class monitor;
 
@@ -34,7 +49,6 @@ class monitor;
         trans.cipherText            = vif.cyphertext_decryption;
         trans.start_encryption      = vif.start_encryption;
         trans.start_decryption      = vif.start_decryption;
-        $display("---------------------\nInput capture time: %0t", $time);
         @(negedge vif.clk);
         @(negedge vif.clk);
         if(vif.done_encryption) begin
@@ -42,16 +56,13 @@ class monitor;
         end else begin
             trans.encryption_cipherText  = 0;
         end
-
         if(vif.done_decyption) begin
             trans.decryption_plainText  = vif.plaintext_decryption;
         end else begin
             trans.decryption_plainText  = 0;
         end
-        $display("Output capture time: %0t", $time);
         mon2scb.put(trans);
         trans.reportio();
       end
     endtask
-  
 endclass

@@ -1,3 +1,20 @@
+/* -----------------------------------------------------------------------------
+   Copyright (c) Omar Muhammad Mustafa
+   -----------------------------------------------------------------------------
+   FILE NAME : aes_tb.sv
+   DEPARTMENT : aes verification
+   AUTHOR : Omar Muhammad
+   AUTHOR’S EMAIL : omarmuhammadmu0@gmail.com
+   -----------------------------------------------------------------------------
+   RELEASE HISTORY
+   VERSION  DATE        AUTHOR      DESCRIPTION
+   1.0      2024-10-5               initial version
+   -----------------------------------------------------------------------------
+   KEYWORDS : AES
+   -----------------------------------------------------------------------------
+   PURPOSE : Simple testbench to validate the function of the logic
+   -FHDR------------------------------------------------------------------------*/
+   
 import aes_package::*;
 
 module aes_tb;

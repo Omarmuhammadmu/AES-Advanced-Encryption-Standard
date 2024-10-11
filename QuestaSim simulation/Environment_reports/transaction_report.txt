@@ -2,48 +2,49 @@
 ----------------------------
 
 -------------- Transaction #0 --------------
- Key text: 63397faaed2bd4fc8ff0f2e477f6c00f 
- 01 
- Cipher text: ef9fbaf043aebbb0a39ed5292dc89ab7 
+ Key text: d793328eb6278de914407dfe2124ddbf 
+ 10 
+ Plain text: e939f35bcd42628e1d11537e5ea0c77c 
 
 -------------- Transaction #1 --------------
- Key text: b35001aeb4d279af8f140c094517b6a2 
- 00 
+ Key text: 9b19d1dc871542fe2fee5fbee523a4e4 
+ 11 
+ Plain text: fde9b1a1aac9b95ff7ef8af8f60be6eb 
+ Cipher text: 6e58de84e4c8cf048eca525f2a0f4f3b 
 
 -------------- Transaction #2 --------------
- Key text: ae72c1394413b097e4cee1e1b2d4cd26 
- 10 
- Plain text: 45719f845fc7356e226f46b09d624eb1 
+ Key text: 8ff0a60c3a82f96b2969e6593676dad4 
+ 01 
+ Cipher text: d0e1e98f6c679bab1dc132c20ee44eb9 
 
 -------------- Transaction #3 --------------
- Key text: 1316ea0c6997d622c74e44e1041ff4f3 
- 01 
- Cipher text: de33f8f2a579414375ce631414be9833 
-
--------------- Transaction #4 --------------
- Key text: 8519bfdbe945cfbebcf476765f0a2c18 
- 01 
- Cipher text: a35bd6c98a8866229fdf30553c28226c 
-
--------------- Transaction #5 --------------
- Key text: ea523fe7a310a6d31ac0503d14b725b6 
+ Key text: 3b25c77f1f4f21a55ad45b2e01e30cb9 
  00 
 
+-------------- Transaction #4 --------------
+ Key text: 81b7dbce76bb5763ff94f012b52a9746 
+ 00 
+
+-------------- Transaction #5 --------------
+ Key text: 937ff5d6f4e35ed8e5cd7646a348c88f 
+ 10 
+ Plain text: eec37ee49ec19dbde0615d6499cfe00e 
+
 -------------- Transaction #6 --------------
- Key text: 1c1755d956eb5aad179600366d0174fc 
+ Key text: 883f81c00aacf5820766b93ff5221714 
  00 
 
 -------------- Transaction #7 --------------
- Key text: d93a55620e7810a4d199857c37e10eb2 
+ Key text: c5f8ce9ed33ce1ef1f503daabb7b8b2c 
  10 
- Plain text: 74ee4d56ed29badf56a8b5c4160e674b 
+ Plain text: 4e6d0b0430ce9237af91fa242f38caef 
 
 -------------- Transaction #8 --------------
- Key text: c5eadc06b76f0ec8d510ccd7ce113 
+ Key text: e81c7289817eca08a4796d8107547255 
  10 
- Plain text: d5befc17e2edf3c147ebcc718306db47 
+ Plain text: d603a9a10b2f05f96e7e790207c6296d 
 
 -------------- Transaction #9 --------------
- Key text: b32fdb3670d57acedc7bf66ff15c9581 
- 10 
- Plain text: 3cc4c8f9cc90973f3e41d2b735ca5eb4 
+ Key text: 9387aea7075ebb065d013987733c3e0d 
+ 01 
+ Cipher text: 50b3ec4dffd8a4229534baf89b7c67cf 
