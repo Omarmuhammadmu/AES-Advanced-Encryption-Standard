@@ -26,5 +26,6 @@ The AES-128 encryption process consists of several stages:
 
 # SystemVerilog-Environment-base testbench detailes
 - Testbench illustration diagram
-
+<p align="center">
 ![AES SV environment](https://github.com/user-attachments/assets/e424efeb-3a49-4e8a-93ce-83f0dbf8f0d9)
+</p>
