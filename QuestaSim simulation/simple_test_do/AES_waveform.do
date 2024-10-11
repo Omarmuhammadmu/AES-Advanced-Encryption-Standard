@@ -28,15 +28,3 @@ configure wave -timelineunits ns
 configure wave -timeline 0
 WaveRestoreZoom {0 ps} {140 ns}
 update
-
-# WaveRestoreCursors {{Cursor 1} {130 ns} 1}
-# quietly wave cursor active 1
-# configure wave -namecolwidth 254
-# configure wave -valuecolwidth 110
-# configure wave -snapdistance 10
-# configure wave -datasetprefix 0
-# configure wave -rowmargin 4
-# configure wave -childrowmargin 2
-# configure wave -gridoffset 0
-# configure wave -gridperiod 1
-# configure wave -griddelta 40
