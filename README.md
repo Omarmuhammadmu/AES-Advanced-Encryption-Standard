@@ -1,4 +1,8 @@
 # AES-Advanced-Encryption-Standard
+<p align="center">
+   <img src="https://github.com/user-attachments/assets/d4101834-3036-4940-9d2d-6e11dbf992c3" />
+</p>
+
 AES-128 is a symmetric encryption algorithm standardized by the National Institute of Standards and Technology (NIST). It operates on fixed block sizes of 128 bits and employs a 128-bit key to encrypt and decrypt data securely. AES-128 is widely used for securing sensitive data due to its strong encryption, efficiency, and resistance to most known attacks.
 
 # AES Algorithem overview
